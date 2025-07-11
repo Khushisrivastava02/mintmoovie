@@ -1,49 +1,60 @@
-# Movie Search App
+# 🎬 MintMoovie🎥  
+A pastel-themed movie search app built with React.js and the OMDB API. Search your favorite movies, nominate them, and manage your watchlist with ease.
 
-## Description
-This react app gives movie results on searching, user can nominate their favorite movies, which will be stored in the localstorage of the browser.
+---
 
-## [Code of Conduct](https://github.com/MukulKolpe/Movie-Search-App/blob/main/CODE_OF_CONDUCT.md)
+## 🔗 Live Demo  
+👉 [Click here to try it out!](https://khushisrivastava02.github.io/mintmoovie)
 
+---
 
-## Tech-stack Used
-- React.js
-- CSS
-- [OMDB API](https://www.omdbapi.com/)
-- Material UI
-- React-Router 
+## 💡 Features
+- 🔍 Search for movies using the OMDB API
+- ⭐ Nominate your favorite movies
+- 📝 Maintain a watchlist
+- 🎨 Clean pastel UI (Peach + Coral Glow theme)
+- 📱 Responsive Design
+- 🔁 Pagination
+- ❌ Error handling for empty or invalid search
 
+---
 
-## Prerequisites
+## 🛠️ Built With
+- React.js (Functional Components + Hooks)
+- React Router
+- OMDB API
+- HTML + CSS (custom pastel design)
+- GitHub Pages for deployment
 
-Make sure you have node.js installed.
+---
 
+## 📁 Project Structure
 
-## Setting up locally
-1. Fork this repository.
-2. clone it.
- ```
- git clone https://github.com/MukulKolpe/Movie-Search-App
- ```
-3. 
- ```
- cd Movie-Search-App
- ```
-4. Install node modules
- ```
- yarn install
- ```
-5. Generate your own API key on [OMDB API](https://www.omdbapi.com/)  
-6. Create .env file inside the root directory.  
-7. Write ```REACT_APP_API_KEY="YOUR-API-KEY"``` inside .env file.   
-8. 
- ```
- yarn start
- ```
-   
+mintmoovie/
+├── public/
+├── src/
+│ ├── components/
+│ │ ├── Navbar/
+│ │ ├── Search/
+│ │ ├── MovieList/
+│ │ └── Buttons/
+│ └── Pages/
+│ └── Watchlist/
+├── package.json
+├── README.md
+└── ...
 
-## Hosted [here](https://movie-search-bymukul.netlify.app/)
+---
 
-## License
+## 🚀 Getting Started (for local setup)
+```bash
+git clone https://github.com/khushisrivastava02/mintmoovie.git
+cd mintmoovie
+npm install
+npm start
 
-### [MIT License](https://github.com/MukulKolpe/Movie-Search-App/blob/main/LICENSE)
+📌 Upcoming Features:-
+🎬 Movie details page
+❤️ Add to favorites with local storage
+🌐 Dark mode toggle
+
