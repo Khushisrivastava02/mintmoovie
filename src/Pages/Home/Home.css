@@ -1,0 +1,61 @@
+/* ===== Hero Section (When No Movies Found) ===== */
+.no-movies {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px; /* space below navbar */
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+.heroImg {
+  width: 95%;
+  max-width: 920px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #ffab91;
+  box-shadow: 0 2px 8px rgba(255, 138, 101, 0.3);
+  margin-top: 0;
+}
+
+/* ===== Search Bar Area ===== */
+.search-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px; /* balanced spacing */
+  padding: 0 5%;
+}
+
+/* ===== Pagination Area ===== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding-bottom: 30px;
+}
+
+/* ===== Responsive Styling ===== */
+@media only screen and (max-width: 1024px) {
+  .no-movies {
+    margin-top: 20px;
+  }
+
+  .heroImg {
+    width: 90%;
+    max-width: 320px;
+    height: 140px;
+  }
+
+  .search-area {
+    justify-content: center;
+    margin-top: 14px;
+  }
+
+  .pagination {
+    padding-bottom: 24px;
+  }
+}

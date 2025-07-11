@@ -1,0 +1,72 @@
+.movie {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  width: 280px;
+  box-shadow: 0 3px 12px rgba(255, 167, 134, 0.5); /* peachy shadow */
+  background-color: #fffaf6; /* soft cream */
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.movie:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 112, 67, 0.6); /* stronger coral glow on hover */
+}
+
+.movie-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30px;
+  justify-content: space-evenly;
+  gap: 24px;
+}
+
+.movie-poster {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.movie-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #5d4037; /* warm brown */
+  margin: 15px 0 5px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info-span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #6d4c41; /* coffee brown */
+  text-transform: capitalize;
+}
+
+.nominateBtn {
+  background-color: #ff8a65; /* peachy coral */
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.nominateBtn:hover {
+  background-color: #ff7043; /* deeper coral */
+}

@@ -1,0 +1,32 @@
+.no-nom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.heroImg {
+  height: 320px;               /* reduced for better above-fold view */
+  width: 80%;
+  max-width: 700px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #ffab91;
+  box-shadow: 0 4px 12px rgba(255, 138, 101, 0.2);
+}
+
+/* Responsive */
+@media only screen and (max-width: 1024px) {
+  .no-nom {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .heroImg {
+    width: 90%;
+    height: 200px;
+  }
+}
