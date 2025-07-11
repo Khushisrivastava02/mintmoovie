@@ -1,60 +1,79 @@
-# 🎬 MintMoovie🎥  
-A pastel-themed movie search app built with React.js and the OMDB API. Search your favorite movies, nominate them, and manage your watchlist with ease.
+🌿 MintMoovie 🎬
 
----
+A sleek movie search application built with React.js that allows users to search, explore, and nominate their favorite movies.
 
-## 🔗 Live Demo  
-👉 [Click here to try it out!](https://khushisrivastava02.github.io/mintmoovie)
+Overview:-
 
----
+MintMoovie is a responsive movie search app powered by the OMDB API. It enables users to search for movies, view basic information, and explore movie details in a neat and interactive interface.)
 
-## 💡 Features
-- 🔍 Search for movies using the OMDB API
-- ⭐ Nominate your favorite movies
-- 📝 Maintain a watchlist
-- 🎨 Clean pastel UI (Peach + Coral Glow theme)
-- 📱 Responsive Design
-- 🔁 Pagination
-- ❌ Error handling for empty or invalid search
+Live Demo:-
+    
+https://khushisrivastava02.github.io/mintmoovie/
 
----
+ Core Features:-
 
-## 🛠️ Built With
-- React.js (Functional Components + Hooks)
-- React Router
-- OMDB API
-- HTML + CSS (custom pastel design)
-- GitHub Pages for deployment
+. Search interface for movies
 
----
+. Display results in a grid layout
 
-## 📁 Project Structure
+. Show title, year, and poster
 
-mintmoovie/
-├── public/
-├── src/
-│ ├── components/
-│ │ ├── Navbar/
-│ │ ├── Search/
-│ │ ├── MovieList/
-│ │ └── Buttons/
-│ └── Pages/
-│ └── Watchlist/
-├── package.json
-├── README.md
-└── ...
+. Movie detail popups
 
----
+. Pagination of results
 
-## 🚀 Getting Started (for local setup)
-```bash
-git clone https://github.com/khushisrivastava02/mintmoovie.git
-cd mintmoovie
-npm install
-npm start
+. Local storage for favorites
 
-📌 Upcoming Features:-
-🎬 Movie details page
-❤️ Add to favorites with local storage
-🌐 Dark mode toggle
+. Debounced search input
+
+ Technical Requirements:-
+ 
+. React functional components with hooks
+
+.OMDB API integration
+
+. Handle API loading & error states
+
+. Debounced search input
+
+. React Router for navigation
+
+. LocalStorage for nominated movies
+
+ Technical Specifications
+
+. API: OMDb API
+
+. API Key: Required (Stored in .env)
+
+. Deployment: GitHub Pages
+
+ Setup Instructions:-
+ 1. Clone the repo - git clone https://github.com/Khushisrivastava02/mintmoovie.git
+    cd mintmoovie 
+ 2. Install dependencies - npm install
+ 3. Add .env file - REACT_APP_API_KEY=your_omdb_api_key
+ 4. Start development server - npm start
+ 5. Deploy - npm run deploy
+
+ Future Improvements:-
+
+ . Filters by year, genre, and rating
+ 
+ . Add movie detail modal or page
+ 
+ . Client-side caching
+ 
+ . Keyboard navigation support
+ 
+ . Add loading skeletons
+ 
+ . Enhanced error boundaries
+
+  Inspiration
+ 
+  Designed as a fresher-level project to showcase React, API integration, and front-end skills with a polished user interface.
+
+
+
 
