@@ -15,19 +15,27 @@ function Home() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
   const [nom, setNom] = useState([]);
-  const [pageCount, setPageCount] = useState(0);
+  const [totalResults, setTotalResults] = useState(0);
+  const [pageCount, setPageCount] = useState(1);
   const navigate = useNavigate();
+  const resultsPerPage = 10;
 
-  const limit = 8;
+  const movieRequest = async (searchString, page = 1) => {
+    if (!API_KEY) {
+      console.error("❌ API KEY missing in .env file");
+      return;
+    }
 
-  const movieRequest = async (searchString) => {
-    const url = `https://www.omdbapi.com/?s=${searchString}&apikey=${API_KEY}`;
+    const url = `https://www.omdbapi.com/?s=${searchString}&page=${page}&apikey=${API_KEY}`;
     try {
       const response = await Axios.get(url);
       if (response.data.Search) {
         setMovies(response.data.Search);
+        setTotalResults(parseInt(response.data.totalResults));
+        setPageCount(Math.ceil(response.data.totalResults / resultsPerPage));
       } else {
         setMovies([]);
+        setPageCount(1);
       }
     } catch (error) {
       console.error("❌ API Error:", error);
@@ -36,18 +44,15 @@ function Home() {
 
   const handlePageClick = (event, value) => {
     window.scrollTo(0, 0);
-    setPageCount(value);
-    const url = `https://www.omdbapi.com/?s=${search}&page=${value}&apikey=${API_KEY}`;
-    Axios.get(url).then((response) => {
-      setMovies(response.data.Search || []);
-    });
+    movieRequest(search, value);
   };
 
   useEffect(() => {
     if (search) {
       movieRequest(search);
     } else {
-      setMovies([]); // Clear results when search is cleared
+      setMovies([]);
+      setPageCount(1);
     }
   }, [search]);
 
@@ -59,15 +64,19 @@ function Home() {
   }, []);
 
   const saveToLocal = (items) => {
-    if (items.length < 6) {
+    if (items.length <= 5) {
       localStorage.setItem("Nominations", JSON.stringify(items));
     } else {
-      alert("You have reached the maximum number of nominations");
+      alert("You have reached the maximum number of nominations (5)");
       navigate("/nominees");
     }
   };
 
   const nominateMovie = (movie) => {
+    if (nom.find((m) => m.imdbID === movie.imdbID)) {
+      alert("Movie already nominated!");
+      return;
+    }
     const newNom = [...nom, movie];
     setNom(newNom);
     saveToLocal(newNom);
@@ -91,7 +100,7 @@ function Home() {
               <Stack spacing={2}>
                 <Pagination
                   className="pagination-comp"
-                  count={limit}
+                  count={pageCount}
                   variant="outlined"
                   shape="rounded"
                   onChange={handlePageClick}
@@ -116,9 +125,15 @@ function Home() {
           </>
         ) : (
           <div className="no-movies">
-            <img src={heroImg} alt="Welcome to MintMoovie!" className="heroImg" />
+            <img
+              src={heroImg}
+              alt="Welcome to MintMoovie!"
+              className="heroImg"
+            />
             <h2 className="welcome-heading">Welcome to MintMoovie 🎬</h2>
-            <p className="sub-text">Start by typing a movie name in the search bar above</p>
+            <p className="sub-text">
+              Start by typing a movie name in the search bar above
+            </p>
           </div>
         )}
       </div>
