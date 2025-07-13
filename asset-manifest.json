@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/mintmoovie/static/css/main.16bc875b.css",
-    "main.js": "/mintmoovie/static/js/main.f5a72a52.js",
+    "main.js": "/mintmoovie/static/js/main.7c58f787.js",
     "static/js/787.269438a4.chunk.js": "/mintmoovie/static/js/787.269438a4.chunk.js",
     "static/media/mintmoovie-hero.png": "/mintmoovie/static/media/mintmoovie-hero.823bdc3795191739dcc8.png",
     "static/media/HeroImg2.webp": "/mintmoovie/static/media/HeroImg2.89a4d91bc3fe8e5fb9b3.webp",
     "index.html": "/mintmoovie/index.html",
     "main.16bc875b.css.map": "/mintmoovie/static/css/main.16bc875b.css.map",
-    "main.f5a72a52.js.map": "/mintmoovie/static/js/main.f5a72a52.js.map",
+    "main.7c58f787.js.map": "/mintmoovie/static/js/main.7c58f787.js.map",
     "787.269438a4.chunk.js.map": "/mintmoovie/static/js/787.269438a4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.16bc875b.css",
-    "static/js/main.f5a72a52.js"
+    "static/js/main.7c58f787.js"
   ]
 }
