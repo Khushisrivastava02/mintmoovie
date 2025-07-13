@@ -1,17 +1,17 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
-import Watchlist from "./Pages/Watchlist/Watchlist"; // ✅ Updated import
+import Watchlist from "./Pages/Watchlist/Watchlist";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="/mintmoovie"> {/* ✅ Add this line */}
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/watchlist" element={<Watchlist />} /> {/* ✅ Updated path */}
+          <Route path="/watchlist" element={<Watchlist />} />
         </Routes>
       </Router>
     </div>
