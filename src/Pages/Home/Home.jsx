@@ -12,21 +12,22 @@ import Stack from "@mui/material/Stack";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 function Home() {
-  const [movies, searchMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
   const [nom, setNom] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const navigate = useNavigate();
 
-  let limit = 8;
+  const limit = 8;
 
   const movieRequest = async (searchString) => {
     const url = `https://www.omdbapi.com/?s=${searchString}&apikey=${API_KEY}`;
-
     try {
       const response = await Axios.get(url);
       if (response.data.Search) {
-        searchMovies(response.data.Search);
+        setMovies(response.data.Search);
+      } else {
+        setMovies([]);
       }
     } catch (error) {
       console.error("❌ API Error:", error);
@@ -38,12 +39,16 @@ function Home() {
     setPageCount(value);
     const url = `https://www.omdbapi.com/?s=${search}&page=${value}&apikey=${API_KEY}`;
     Axios.get(url).then((response) => {
-      searchMovies(response.data.Search);
+      setMovies(response.data.Search || []);
     });
   };
 
   useEffect(() => {
-    if (search) movieRequest(search);
+    if (search) {
+      movieRequest(search);
+    } else {
+      setMovies([]); // Clear results when search is cleared
+    }
   }, [search]);
 
   useEffect(() => {
@@ -53,20 +58,20 @@ function Home() {
     }
   }, []);
 
-  function saveToLocal(items) {
+  const saveToLocal = (items) => {
     if (items.length < 6) {
       localStorage.setItem("Nominations", JSON.stringify(items));
     } else {
       alert("You have reached the maximum number of nominations");
       navigate("/nominees");
     }
-  }
+  };
 
-  function nominateMovie(movie) {
+  const nominateMovie = (movie) => {
     const newNom = [...nom, movie];
     setNom(newNom);
     saveToLocal(newNom);
-  }
+  };
 
   return (
     <div className="container-fluid movie-app">
@@ -75,7 +80,7 @@ function Home() {
       </div>
 
       <div className="row">
-        {movies.length > 0 ? (
+        {search && movies.length > 0 ? (
           <>
             <MovieList
               movies={movies}
@@ -113,6 +118,7 @@ function Home() {
           <div className="no-movies">
             <img src={heroImg} alt="Welcome to MintMoovie!" className="heroImg" />
             <h2 className="welcome-heading">Welcome to MintMoovie 🎬</h2>
+            <p className="sub-text">Start by typing a movie name in the search bar above</p>
           </div>
         )}
       </div>
