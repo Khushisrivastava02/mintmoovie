@@ -6,7 +6,7 @@ function AddNomination() {
   return (
     <div className="btn">
       <BookmarkAddIcon />
-      <span>Nominate Movie</span>
+      <span>Add to Watchlist</span>
     </div>
   );
 }

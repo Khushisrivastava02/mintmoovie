@@ -3,9 +3,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 8px;
   padding: 10px 20px;
-  background-color: #ffab91;  /* peach background */
-  color: #4e342e;             /* deep brown text */
+  background-color: #ffab91;
+  color: #4e342e;
   font-size: 16px;
   font-weight: 600;
   border: none;
@@ -16,6 +17,6 @@
 }
 
 .btn:hover {
-  background-color: #ff8a65;  /* deeper coral on hover */
-  transform: translateY(-2px);
+  background-color: #ff8a65;
+  transform: scale(1.03);
 }

@@ -6,7 +6,7 @@ function RemoveNomination() {
   return (
     <div className="btn">
       <BookmarkRemoveIcon />
-      <span>Remove Movie</span>
+      <span>Remove from Watchlist</span>
     </div>
   );
 }
