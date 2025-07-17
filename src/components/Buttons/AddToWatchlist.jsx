@@ -2,7 +2,7 @@ import React from "react";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import "./ButtonStyles.css";
 
-function AddNomination() {
+function AddToWatchlist() {
   return (
     <div className="btn">
       <BookmarkAddIcon />
@@ -11,4 +11,4 @@ function AddNomination() {
   );
 }
 
-export default AddNomination;
+export default AddToWatchlist;

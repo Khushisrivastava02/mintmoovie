@@ -2,7 +2,7 @@ import React from "react";
 import BookmarkRemoveIcon from "@mui/icons-material/BookmarkRemove";
 import "./ButtonStyles.css";
 
-function RemoveNomination() {
+function RemoveFromWatchlist() {
   return (
     <div className="btn">
       <BookmarkRemoveIcon />
@@ -11,4 +11,4 @@ function RemoveNomination() {
   );
 }
 
-export default RemoveNomination;
+export default RemoveFromWatchlist;

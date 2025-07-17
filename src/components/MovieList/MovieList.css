@@ -54,7 +54,8 @@
   text-transform: capitalize;
 }
 
-.nominateBtn {
+/* Changed class name to be more general and reusable */
+.watchlistBtn {
   background-color: #ff8a65; /* peachy coral */
   color: white;
   border: none;
@@ -67,6 +68,6 @@
   transition: background-color 0.3s ease;
 }
 
-.nominateBtn:hover {
+.watchlistBtn:hover {
   background-color: #ff7043; /* deeper coral */
 }

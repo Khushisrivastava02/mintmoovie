@@ -5,8 +5,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 function MovieList(props) {
-  const notify = () => toast.success("Movie Nominated!");
-  const NomComponent = props.nomComponent;
+  const notify = () => toast.success("Added to Watchlist!");
+  const ActionComponent = props.actionComponent;
+
   return (
     <>
       <motion.div layout className="movie-list">
@@ -24,7 +25,7 @@ function MovieList(props) {
                 src={movie.Poster}
                 alt="Movie Poster"
                 className="movie-poster"
-              ></img>
+              />
               <span className="movie-name">{movie.Title}</span>
               <div className="movie-info">
                 <span className="info-span">Year: {movie.Year}</span>
@@ -37,12 +38,13 @@ function MovieList(props) {
                 }}
                 className="nominateBtn"
               >
-                <NomComponent />
+                <ActionComponent />
               </button>
             </motion.div>
           ))}
         </AnimatePresence>
       </motion.div>
+
       <ToastContainer
         position="top-right"
         autoClose={500}
@@ -55,7 +57,6 @@ function MovieList(props) {
         pauseOnHover
         transition={Flip}
       />
-      ;
     </>
   );
 }

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ToastContainer, toast, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./Watchlist.css"; // ✅ Rename corresponding CSS file too
-import RemoveNomination from "../../components/Buttons/RemoveNomination";
+import "./Watchlist.css"; // ✅ Make sure the file name matches
+import RemoveFromWatchlist from "../../components/Buttons/RemoveFromWatchlist";
 import heroImg from "../../Assets/HeroImg2.webp";
 
 const Watchlist = () => {
@@ -46,9 +46,9 @@ const Watchlist = () => {
               </div>
               <button
                 onClick={() => removeMovie(movie)}
-                className="nominateBtn"
+                className="watchlistBtn"
               >
-                <RemoveNomination />
+                <RemoveFromWatchlist />
               </button>
             </div>
           ))
