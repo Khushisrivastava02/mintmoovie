@@ -93,8 +93,8 @@ function Home() {
           <>
             <MovieList
               movies={movies}
-              handleNomClick={addToWatchlist}
-              nomComponent={AddToWatchlist}
+              handleWatchlistClick={addToWatchlist}
+              actionComponent={AddToWatchlist}
             />
             <div className="pagination">
               <Stack spacing={2}>
