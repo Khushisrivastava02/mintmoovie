@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import MovieList from "../../components/MovieList/MovieList";
 import Search from "../../components/Search/Search";
-import AddNomination from "../../components/Buttons/AddNomination";
+import AddToWatchlist from "../../components/Buttons/AddToWatchlist";
 import heroImg from "../../Assets/mintmoovie-hero.png";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 function Home() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
-  const [nom, setNom] = useState([]);
+  const [watchlist, setWatchlist] = useState([]);
   const [totalResults, setTotalResults] = useState(0);
   const [pageCount, setPageCount] = useState(1);
   const navigate = useNavigate();
@@ -57,29 +57,29 @@ function Home() {
   }, [search]);
 
   useEffect(() => {
-    const movieNom = JSON.parse(localStorage.getItem("Nominations"));
-    if (movieNom) {
-      setNom(movieNom);
+    const stored = JSON.parse(localStorage.getItem("Watchlist"));
+    if (stored) {
+      setWatchlist(stored);
     }
   }, []);
 
   const saveToLocal = (items) => {
     if (items.length <= 5) {
-      localStorage.setItem("Nominations", JSON.stringify(items));
+      localStorage.setItem("Watchlist", JSON.stringify(items));
     } else {
-      alert("You have reached the maximum number of nominations (5)");
-      navigate("/nominees");
+      alert("You have reached the maximum number of watchlist items (5)");
+      navigate("/watchlist");
     }
   };
 
-  const nominateMovie = (movie) => {
-    if (nom.find((m) => m.imdbID === movie.imdbID)) {
-      alert("Movie already nominated!");
+  const addToWatchlist = (movie) => {
+    if (watchlist.find((m) => m.imdbID === movie.imdbID)) {
+      alert("Movie already added to watchlist!");
       return;
     }
-    const newNom = [...nom, movie];
-    setNom(newNom);
-    saveToLocal(newNom);
+    const updatedList = [...watchlist, movie];
+    setWatchlist(updatedList);
+    saveToLocal(updatedList);
   };
 
   return (
@@ -93,8 +93,8 @@ function Home() {
           <>
             <MovieList
               movies={movies}
-              handleNomClick={nominateMovie}
-              nomComponent={AddNomination}
+              handleNomClick={addToWatchlist}
+              nomComponent={AddToWatchlist}
             />
             <div className="pagination">
               <Stack spacing={2}>

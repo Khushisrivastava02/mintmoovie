@@ -33,10 +33,10 @@ function MovieList(props) {
               </div>
               <button
                 onClick={() => {
-                  props.handleNomClick(movie);
+                  props.handleWatchlistClick(movie); // ✅ updated
                   notify();
                 }}
-                className="nominateBtn"
+                className="watchlistBtn" // ✅ updated
               >
                 <ActionComponent />
               </button>
